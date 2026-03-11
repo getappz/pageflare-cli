@@ -6,7 +6,9 @@
 	"bin": {
 		"pageflare": "bin/cli.js"
 	},
-	"files": ["bin/"],
+	"files": [
+		"bin/"
+	],
 	"engines": {
 		"node": ">=20"
 	},

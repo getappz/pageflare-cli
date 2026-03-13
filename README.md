@@ -34,6 +34,9 @@ pageflare --init
 
 # Output manifest as JSON
 pageflare dist --json
+
+# Update to the latest version
+pageflare upgrade
 ```
 
 ## Options
@@ -50,9 +53,13 @@ Options:
   -c, --config <CONFIG>  Path to config file (defaults to <input>/pageflare.jsonc)
       --init             Generate a pageflare.jsonc config file
       --login            Log in to activate your Pro license
+      --no-progress      Disable progress spinners
       --log <LOG>        Log level: off, error, warn, info, debug, trace [default: warn]
   -h, --help             Print help
   -V, --version          Print version
+
+Subcommands:
+  upgrade                Update pageflare to the latest version (--force to reinstall)
 ```
 
 ## Supported Platforms

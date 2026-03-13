@@ -1,25 +1,25 @@
 {
-	"name": "@pageflare/cli",
-	"version": "0.0.0",
-	"description": "Pageflare CLI — static site optimization",
-	"license": "MIT",
-	"bin": {
-		"pageflare": "bin/cli.js"
-	},
-	"files": [
-		"bin/"
-	],
-	"engines": {
-		"node": ">=20"
-	},
-	"optionalDependencies": {
-		"@pageflare/cli-darwin-arm64": "0.0.0",
-		"@pageflare/cli-darwin-x64": "0.0.0",
-		"@pageflare/cli-linux-arm64": "0.1.0",
-		"@pageflare/cli-linux-arm64-musl": "0.1.0",
-		"@pageflare/cli-linux-x64": "0.1.0",
-		"@pageflare/cli-linux-x64-musl": "0.1.0",
-		"@pageflare/cli-win32-x64": "0.1.0"
-	},
-	"preferUnplugged": true
+  "name": "@pageflare/cli",
+  "version": "0.2.0",
+  "description": "Pageflare CLI — static site optimization",
+  "license": "MIT",
+  "bin": {
+    "pageflare": "bin/cli.js"
+  },
+  "files": [
+    "bin/"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "optionalDependencies": {
+    "@pageflare/cli-darwin-arm64": "0.2.0",
+    "@pageflare/cli-darwin-x64": "0.2.0",
+    "@pageflare/cli-linux-arm64": "0.2.0",
+    "@pageflare/cli-linux-arm64-musl": "0.2.0",
+    "@pageflare/cli-linux-x64": "0.2.0",
+    "@pageflare/cli-linux-x64-musl": "0.2.0",
+    "@pageflare/cli-win32-x64": "0.2.0"
+  },
+  "preferUnplugged": true
 }

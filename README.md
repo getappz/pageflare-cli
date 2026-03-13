@@ -30,7 +30,7 @@ pageflare dist -o optimized
 pageflare dist --in-place
 
 # Generate a config file
-pageflare --init
+pageflare init
 
 # Output manifest as JSON
 pageflare dist --json
@@ -51,7 +51,6 @@ Options:
       --json             Output manifest as JSON
       --force            Force reprocessing even if no files changed
   -c, --config <CONFIG>  Path to config file (defaults to <input>/pageflare.jsonc)
-      --init             Generate a pageflare.jsonc config file
       --login            Log in to activate your Pro license
       --no-progress      Disable progress spinners
       --log <LOG>        Log level: off, error, warn, info, debug, trace [default: warn]
@@ -59,6 +58,7 @@ Options:
   -V, --version          Print version
 
 Subcommands:
+  init                   Generate a pageflare.jsonc config file
   upgrade                Update pageflare to the latest version (--force to reinstall)
 ```
 

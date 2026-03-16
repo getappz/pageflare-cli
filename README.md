@@ -43,24 +43,28 @@ pageflare upgrade
 
 ```
 Arguments:
-  [INPUT]                Path to the SSG output directory [default: .]
+  [INPUT]                  Path to the project root or SSG output directory [default: .]
 
 Options:
-  -o, --output <OUTPUT>  Output directory (defaults to <input>/.appz)
-      --in-place         Overwrite files in-place
-      --json             Output manifest as JSON
-      --force            Force reprocessing even if no files changed
-  -c, --config <CONFIG>  Path to config file (defaults to <input>/pageflare.jsonc)
-      --login            Log in to activate your Pro license
-      --no-progress      Disable progress spinners
-      --log <LOG>        Log level: off, error, warn, info, debug, trace [default: warn]
-  -h, --help             Print help
-  -V, --version          Print version
+  -o, --output <OUTPUT>    Output directory (defaults to <input>/.appz/output/static)
+      --in-place           Overwrite files in-place
+      --json               Output manifest as JSON
+      --force              Force reprocessing even if no files changed
+  -c, --config <CONFIG>    Path to config file (defaults to <input>/pageflare.jsonc)
+      --platform <PLATFORM>  Deployment platform: auto, vercel, netlify, none [default: auto]
+      --login              Log in to activate your Pro license
+      --no-progress        Disable progress spinners
+      --log <LOG>          Log level: off, error, warn, info, debug, trace [default: warn]
+  -h, --help               Print help
+  -V, --version            Print version
 
 Subcommands:
+  optimize               Run optimizations (default when no subcommand given)
   init                   Generate a pageflare.jsonc config file
   upgrade                Update pageflare to the latest version (--force to reinstall)
 ```
+
+Pageflare auto-detects your SSG framework (Next.js, Astro, Gatsby, Nuxt, Vite, Hugo, Jekyll, and more) and resolves the correct build output directory.
 
 ## Supported Platforms
 

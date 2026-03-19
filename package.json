@@ -3,6 +3,14 @@
 	"version": "0.4.0",
 	"description": "Pageflare CLI — static site optimization",
 	"license": "MIT",
+	"homepage": "https://pageflare.dev",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/getappz/pageflare-cli"
+	},
+	"bugs": {
+		"url": "https://github.com/getappz/pageflare-cli/issues"
+	},
 	"bin": {
 		"pageflare": "bin/cli.js"
 	},

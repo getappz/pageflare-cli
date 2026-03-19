@@ -66,6 +66,15 @@ Subcommands:
 
 Pageflare auto-detects your SSG framework (Next.js, Astro, Gatsby, Nuxt, Vite, Hugo, Jekyll, and more) and resolves the correct build output directory.
 
+## Documentation
+
+- [Getting Started](https://pageflare.dev/docs/getting-started) — install, configure, and run your first optimization
+- [CLI Commands](https://pageflare.dev/docs/cli/commands) — full reference for all subcommands and flags
+- [Configuration](https://pageflare.dev/docs/cli/configuration) — `pageflare.jsonc` options and per-feature settings
+- [Changelog](https://pageflare.dev/docs/changelog) — release notes and version history
+- [WordPress Guide](https://pageflare.dev/wordpress) — static export and edge optimization workflows
+- [Free Audit](https://pageflare.dev/audit) — live PageSpeed analysis with fix recommendations
+
 ## Supported Platforms
 
 This package installs a platform-specific binary via optional dependencies:

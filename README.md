@@ -2,6 +2,27 @@
 
 Optimize static site output for PageSpeed. Pageflare processes your SSG build output (HTML, CSS, JS, images) and applies production-grade optimizations.
 
+## GitHub Action
+
+Add one step to your workflow — no install needed:
+
+```yaml
+- uses: getappz/pageflare-cli@v1
+```
+
+With options:
+
+```yaml
+- uses: getappz/pageflare-cli@v1
+  with:
+    args: "dist -o optimized --platform vercel"
+```
+
+| Input | Default | Description |
+|-------|---------|-------------|
+| `version` | `latest` | CLI version to install |
+| `args` | | Arguments passed to `pageflare optimize` |
+
 ## Install
 
 ```bash

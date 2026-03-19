@@ -1,0 +1,34 @@
+name: "Pageflare Optimize"
+description: "Optimize static site output for PageSpeed — HTML, CSS, JS minification, image optimization, font subsetting, and more."
+author: "Pageflare"
+branding:
+  icon: "zap"
+  color: "blue"
+
+inputs:
+  version:
+    description: "CLI version to install (e.g. 0.4.0). Defaults to latest."
+    required: false
+    default: "latest"
+  args:
+    description: "Arguments passed to `pageflare optimize` (e.g. `dist -o out --force --platform vercel`)"
+    required: false
+    default: ""
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Pageflare CLI
+      shell: bash
+      run: |
+        VERSION="${{ inputs.version }}"
+        if [ "$VERSION" = "latest" ]; then
+          curl -fsSL https://get.appz.dev/pageflare/install.sh | sh
+        else
+          curl -fsSL https://get.appz.dev/pageflare/install.sh | sh -s "$VERSION"
+        fi
+        echo "$HOME/.pageflare/bin" >> "$GITHUB_PATH"
+
+    - name: Run Pageflare
+      shell: bash
+      run: pageflare optimize ${{ inputs.args }}

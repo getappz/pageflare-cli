@@ -1,0 +1,48 @@
+name: Documentation Feedback
+description: Report an error, suggest an edit, or request a new guide
+labels: ["docs"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve the pageflare docs. Whether you found an error, something unclear, or a missing guide — we appreciate the feedback.
+
+  - type: input
+    id: page-url
+    attributes:
+      label: Page URL
+      description: Link to the docs page this is about
+      placeholder: "https://pageflare.dev/docs/platforms/vercel/"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: Feedback type
+      options:
+        - Incorrect information
+        - Outdated content
+        - Unclear or confusing
+        - Missing information
+        - Typo or formatting
+        - Request a new guide
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What's wrong or what's missing?
+      description: Be as specific as you can — quote the text if reporting an error
+      placeholder: "The build command example uses dist/ but Astro outputs to build/ when..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix (optional)
+      description: If you know what it should say, paste the corrected text here
+    validations:
+      required: false

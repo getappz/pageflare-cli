@@ -56,6 +56,9 @@ pageflare init
 # Output manifest as JSON
 pageflare dist --json
 
+# Audit site for performance issues
+pageflare audit dist
+
 # Update to the latest version
 pageflare upgrade
 ```
@@ -72,7 +75,7 @@ Options:
       --json               Output manifest as JSON
       --force              Force reprocessing even if no files changed
   -c, --config <CONFIG>    Path to config file (defaults to <input>/pageflare.jsonc)
-      --platform <PLATFORM>  Deployment platform: auto, vercel, netlify, none [default: auto]
+      --platform <PLATFORM>  Deployment platform: auto, vercel, netlify, cloudflare-pages, none [default: auto]
       --login              Log in to activate your Pro license
       --no-progress        Disable progress spinners
       --log <LOG>          Log level: off, error, warn, info, debug, trace [default: warn]
@@ -81,6 +84,7 @@ Options:
 
 Subcommands:
   optimize               Run optimizations (default when no subcommand given)
+  audit                  Audit a static site for performance issues
   init                   Generate a pageflare.jsonc config file
   upgrade                Update pageflare to the latest version (--force to reinstall)
 ```

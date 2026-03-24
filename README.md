@@ -76,6 +76,7 @@ Options:
       --force              Force reprocessing even if no files changed
   -c, --config <CONFIG>    Path to config file (defaults to <input>/pageflare.jsonc)
       --platform <PLATFORM>  Deployment platform: auto, vercel, netlify, cloudflare-pages, none [default: auto]
+      --prod               Production build — enables CDN image rewrites (e.g. Cloudflare Pages)
       --login              Log in to activate your Pro license
       --no-progress        Disable progress spinners
       --log <LOG>          Log level: off, error, warn, info, debug, trace [default: warn]

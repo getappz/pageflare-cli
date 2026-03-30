@@ -62,6 +62,13 @@ pageflare audit dist
 # Audit AI-readiness (GEO score)
 pageflare geo audit --path dist/
 pageflare geo audit --url https://example.com
+pageflare geo audit --path dist/ --format github --badge
+
+# Auto-fix GEO issues (free, no API key)
+pageflare geo fix --path dist/ --auto
+
+# Audit SEO (technical SEO score)
+pageflare seo audit --path dist/
 
 # Update to the latest version
 pageflare upgrade
@@ -91,7 +98,9 @@ Subcommands:
   optimize               Run optimizations (default when no subcommand given)
   audit                  Audit a static site for performance issues
   geo audit              Audit AI-readiness (GEO score, 0–100)
-  geo fix                Fix GEO issues using an LLM (Pro license)
+  geo fix                Fix GEO issues (--auto for free fixes, or LLM-powered with Pro license)
+  seo audit              Audit technical SEO (score 0–100)
+  seo fix                Fix SEO issues (Pro license)
   init                   Generate a pageflare.jsonc config file
   upgrade                Update pageflare to the latest version (--force to reinstall)
 ```

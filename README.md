@@ -64,11 +64,17 @@ pageflare geo audit --path dist/
 pageflare geo audit --url https://example.com
 pageflare geo audit --path dist/ --format github --badge
 
-# Auto-fix GEO issues (free, no API key)
-pageflare geo fix --path dist/ --auto
+# Auto-fix GEO issues (deterministic, no API key — requires Solo license)
+pageflare geo fix dist/ --auto
 
-# Audit SEO (technical SEO score)
-pageflare seo audit --path dist/
+# Audit SEO (technical SEO score, free)
+pageflare seo audit dist/
+
+# Auto-fix SEO issues (deterministic — requires Solo license)
+pageflare seo fix dist/ --auto
+
+# PWA: generate manifest + service worker + icons locally (free)
+pageflare pwa build
 
 # Update to the latest version
 pageflare upgrade
@@ -98,10 +104,17 @@ Subcommands:
   optimize               Run optimizations (default when no subcommand given)
   audit                  Audit a static site for performance issues
   geo audit              Audit AI-readiness (GEO score, 0–100)
-  geo fix                Fix GEO issues (--auto for free fixes, or LLM-powered with Pro license)
+  geo fix                Fix GEO issues — deterministic (--auto) or LLM (BYOK). Requires Solo+ license.
   seo audit              Audit technical SEO (score 0–100)
-  seo fix                Fix SEO issues (Pro license)
+  seo fix                Fix SEO issues — deterministic (--auto) or LLM (BYOK). Requires Solo+ license.
+  pwa build              Generate manifest, service worker, icons, and SDK script (free)
+  pwa init|config|push|stats   Manage cloud PWA: push notifications, analytics, install pages
+  speed                  Measure Core Web Vitals via PageSpeed Insights
+  sites add|list|remove  Register sites for monitoring
+  schedule add|list      Schedule recurring audits (cron-based)
+  studio                 Launch the local monitoring dashboard (pageflare-studio)
   init                   Generate a pageflare.jsonc config file
+  login                  Activate a CLI license
   upgrade                Update pageflare to the latest version (--force to reinstall)
 ```
 

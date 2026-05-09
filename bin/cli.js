@@ -9,8 +9,6 @@ const PLATFORMS = {
 	"linux-x64-musl": "@pageflare/cli-linux-x64-musl",
 	"linux-arm64-glibc": "@pageflare/cli-linux-arm64",
 	"linux-arm64-musl": "@pageflare/cli-linux-arm64-musl",
-	"darwin-x64": "@pageflare/cli-darwin-x64",
-	"darwin-arm64": "@pageflare/cli-darwin-arm64",
 	"win32-x64": "@pageflare/cli-win32-x64",
 };
 

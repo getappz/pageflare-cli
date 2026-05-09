@@ -47,11 +47,16 @@ pageflare dist
 # Write optimized files to a separate output directory
 pageflare dist -o optimized
 
-# Overwrite files in-place
-pageflare dist --in-place
+# Optimize the build directory in place (overwrite files in dist/)
+pageflare dist -o dist
 
-# Wipe the output directory before writing (full reset)
+# Wipe the output directory before writing (full reset; refuses if input == output)
 pageflare dist -o optimized --clean-output
+
+# Build pipeline integration — opt into GEO + SEO + audit during optimize
+pageflare dist -o dist --with-geo --with-seo --with-audit
+pageflare dist -o dist --with-pwa                     # generate manifest/SW/icons too
+pageflare dist -o dist --fail-on-broken-refs          # exit non-zero on internal 404s
 
 # Skip the browser-driven extractor (for CI environments without Chrome)
 pageflare dist --no-browser
@@ -98,15 +103,24 @@ Arguments:
   [INPUT]                  Path to the project root or SSG output directory [default: .]
 
 Options:
-  -o, --output <OUTPUT>    Output directory (defaults to <input>/.appz/output/static)
-      --in-place           Overwrite files in-place
-      --clean-output       Wipe the output directory before writing
+  -o, --output <OUTPUT>    Output directory (defaults to <input>/.appz/output/static).
+                           Set to the same path as INPUT to optimize in place.
+      --clean-output       Wipe the output directory before writing. Refuses
+                           to run when output equals input (would delete source).
       --json               Output manifest as JSON
       --force              Force reprocessing even if no files changed
   -c, --config <CONFIG>    Path to config file (defaults to <input>/pageflare.jsonc)
       --platform <PLATFORM>  Deployment platform: auto, vercel, netlify, cloudflare-pages, none [default: auto]
       --prod               Production build — enables CDN image rewrites (e.g. Cloudflare Pages)
-      --no-browser         Skip browser-driven critical-CSS / preload extraction (heuristic fallback)
+      --no-browser         Force the heuristic fallback path (no browser-driven
+                           critical-CSS / LCP-preload / font-preload extraction)
+      --with-geo           Generate sitemap.xml, robots.txt, llms.txt, .well-known
+                           agent/MCP cards, /ai/summary.json, etc. (non-destructive)
+      --with-seo           Inject viewport / charset / canonical / basic OG tags
+                           into HTML when missing (idempotent)
+      --with-audit         Run audit checks during the build, emit audit.json
+      --with-pwa           Run PWA build (manifest, service worker, icons) after the pipeline
+      --fail-on-broken-refs  Exit non-zero on internal 404 references
       --login              Log in to activate your Pro license
       --no-progress        Disable progress spinners
       --log <LOG>          Log level: off, error, warn, info, debug, trace [default: warn]
